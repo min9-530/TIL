@@ -1,8 +1,8 @@
-# 함수
+# Function(함수)
 
 function은 계속 반복해서 사용할 수 있는 코드 조각이다. 또한 function의 값은 function 안에서만 존재한다.
 
-## 선언법
+## __선언법__
 ---
 ```javascript
 function 함수명(변수명){
@@ -17,7 +17,7 @@ function sayhello(name, age) {
 ```
 기본적인 function 코드를 활용해보면 이런 코드를 작성 할 수 있다.
 
-## 사용법
+## __사용법__
 ---
 기본적으로 위에서 작성한 function을 사용하는 방법은 아래와 같다.
 ```javascript
@@ -39,7 +39,7 @@ player.sayHello("Minsu");
 ![](https://cdn.discordapp.com/attachments/1019884911802454016/1082957931953258506/image.png) 이렇게 나오는것을 알 수 있다.
 
 위에서 function의 값은 function 안에만 존재한다고 했는데,  
-return을 사용하면 function의 값을 외부로 끌어와서 사용 할 수 있으며,  
+return을 사용하면 function의 값을 __외부로 끌어와서 사용__ 할 수 있으며,  
 function이 한번 return을 하면,  
-function은 작동을 멈추고 결과 값을 return하고 끝나버린다.  
-즉, function 안에선 return 다음에 무슨 코드가 있든 작동을 하지 않는다는 소리다.
+function은 작동을 멈추고 결과 값을 return하고 __끝나버린다.__  
+즉, function 안에선 return 다음에 __무슨 코드가 있든 작동을 하지 않는다는 소리다.__

@@ -1,4 +1,4 @@
-# 변수
+# Variable(변수)
 
 
 # 1. const
