@@ -24,3 +24,5 @@ title.addEventListener("click", handleClickevent);
 아래 링크는 listen 하고싶은 event를 찾는데 유용한 사이트이다.
 
 https://developer.mozilla.org/ko/docs/Web/API/HTMLElement
+
+또한 event를 활용하면 JS에서 CSS를 사용할 수 있다.
