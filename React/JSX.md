@@ -80,22 +80,20 @@ JSX는 Javascript만 사용한 코드보다 편리하다.
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <script type="text/babel">
     const root = document.getElementById("root");
-    function Title() {
-        return (<h3 id = "title" 
+    const Title = () => (
+        <h3 id = "title" 
     onMouseEnter = {() => console.log("mouse enter")}>
     Hello I'm a title
     </h3>
     );
-    }
-    function btn() {
-        return (<button style = {{
+    const Button = () => (
+        <button style = {{
         backgroundColor: "tomato",
     }} 
     onClick = {() => console.log("im clicked")}>
     Click me
     </button>
     );
-    }
     const Container = 
         <div>
             <Title />
