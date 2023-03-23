@@ -66,7 +66,7 @@ JSX는 Javascript만 사용한 코드보다 편리하다.
 </html>
 ```
 
-## JSX_part.2
+## JSX_part.2 (함수, 컴포넌트)
 ---
 ```javascript
     <!DOCTYPE html>
@@ -96,7 +96,11 @@ JSX는 Javascript만 사용한 코드보다 편리하다.
     </button>
     );
     }
-    const Container = <div>Title btn</div>
+    const Container = 
+        <div>
+            <Title />
+            <Button />
+        </div>
     ReactDOM.render(Container, root);
 </script>
 
