@@ -40,26 +40,36 @@ JSX는 Javascript만 사용한 코드보다 편리하다.
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <script type="text/babel">
     const root = document.getElementById("root");
-        const h3 = React.createElement(
+        const Title = (<h3 id = "title" onMouseEnter = {() => console.log("mouse enter")}>
+        Hello i'm a title
+        </h3>
+        );  
+/*         const h3 = React.createElement(
         "h3",       // HTML Tag
         {           // Props in Object
             id: "title",
             onMouseEnter: () => console.log("mouse enter"),
         }, 
         "Hello I'm a title" // content
-    );
-
-        const btn = React.createElement(
+    ); */
+    const Button <button style = {{
+                backgroundColor: "tomato",
+            }}
+            onClick = {() => console.log("im clicked")}
+            >
+            Click me
+            </button>
+/*         const btn = React.createElement(
         "button",
         {
             onClick: () =>  console.log("im clicked"),
             style: {
-                backgroundColor: "tomato,"
+                backgroundColor: "tomato",
             },
         },
         "Click me"
-    ); 
-    const container = React.createElement("div", null, [Title, btn]);
+    );  */
+    const container = React.createElement("div", null, [Title, Button]);
     ReactDOM.render(Container, root);
 </script>
 
