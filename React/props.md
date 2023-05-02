@@ -94,9 +94,62 @@ function MyComponent(props) {
   
   MyComponent.defaultProps = {
     name: '기본 이름'
-  }
-  export default MyComponent;
+  };
+export default MyComponent;
 ```
 위 코드를 실행해보면, 
 ![image](https://user-images.githubusercontent.com/104071568/235657439-ba105b1e-93cb-438d-88f3-13c42aadbd70.png)
 이렇게 `{props.children}`이 컴포넌트 태그 사이에 지정된 내용을 보여주게 된다.
+
+# 비구조화 할당
+현재 MyComponent에서 props 값을 조회할 때마다 props.name, props.chidren과 같이 props라는 키워드를 계속 붙여주고 있는데,  
+이러한 작업을 더 편하게 하기 위해 비구조화 할당을 사용해보자.
+
+## App.js
+```javascript
+import MyComponent from './MyComponent';
+
+function App() {
+  return <MyComponent>리액트</MyComponent>;
+};
+
+export default App;
+```
+
+## MyComponent.js
+```javascript
+function MyComponent(props) {
+  const { name, chidren } = props;
+    return (
+    <div>
+      안녕하세요, 제 이름은 {name} 입니다. <br />
+      children 값은 {chidren} 입니다.
+    </div>
+    );
+  };
+  
+  MyComponent.defaultProps = {
+    name: '기본 이름'
+  };
+export default MyComponent;
+```
+
+## MyComponent.js(2)
+```javascript
+function MyComponent({name, chidren}) {
+    return (
+    <div>
+      안녕하세요, 제 이름은 {name} 입니다. <br />
+      children 값은 {chidren} 입니다.
+    </div>
+    );
+  };
+  
+  MyComponent.defaultProps = {
+    name: '기본 이름'
+  };
+export default MyComponent;
+```
+![image](https://user-images.githubusercontent.com/104071568/235660046-110ea11c-6a32-4715-a09b-5ad1779b9293.png)
+
+코드 실행 결과는 위의 사진과 같다.
