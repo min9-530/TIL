@@ -98,7 +98,7 @@ function MyComponent(props) {
 export default MyComponent;
 ```
 위 코드를 실행해보면, 
-![image](https://user-images.githubusercontent.com/104071568/235657439-ba105b1e-93cb-438d-88f3-13c42aadbd70.png)
+![image](https://user-images.githubusercontent.com/104071568/235661623-99592980-3074-4f94-90f6-e185df9c0e7f.png)
 이렇게 `{props.children}`이 컴포넌트 태그 사이에 지정된 내용을 보여주게 된다.
 
 # 비구조화 할당
@@ -150,6 +150,6 @@ function MyComponent({name, chidren}) {
   };
 export default MyComponent;
 ```
-![image](https://user-images.githubusercontent.com/104071568/235660046-110ea11c-6a32-4715-a09b-5ad1779b9293.png)
+![image](https://user-images.githubusercontent.com/104071568/235661696-e936fe5f-ffb3-4713-84a6-92eefc37cd32.png)
 
 코드 실행 결과는 위의 사진과 같다.
