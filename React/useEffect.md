@@ -78,3 +78,42 @@ export default Hello;
 ```
 
 # 함수 방식에서 side effect를 수행하는 방법
+```javascript
+import { useEffect, useState } from "react";
+
+function Hello2() {
+  const [name, setName] = useState("Mary");
+  const [surname, setSurname] = useState("Poppins");
+
+  useEffect(() => {
+    document.title = name + " " + surname;
+  });
+
+  const handleNameChange = (e) => {
+    setName(e.target.value);
+  };
+
+  const handleSurnameChange = (e) => {
+    setSurname(e.target.value);
+  };
+
+  return (
+    <section>
+      <div>
+        <label>Name : </label>
+        <input value={name} onChange={handleNameChange} />
+      </div>
+      <div>
+        <label>Surname : </label>
+        <input value={surname} onChange={handleSurnameChange} />
+      </div>
+    </section>
+  );
+}
+
+export default Hello2;
+
+```
+``useEffect``의 첫번째 인자로 오는 함수(effect)를 React는 기억하는데 DOM을 업데이트 하고 난 후에 이 effect가 실행된다.  
+
+기본적으로 첫 렌더링과 그 이후의 모든 업데이트에 대해 effect를 수행하게 되는데, 이는 클래스 방식에서 사용한 ``componentDidMount``, ``componentDidUpdate``를 합쳐놓은 것과 같다.
