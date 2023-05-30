@@ -1,4 +1,4 @@
-# CSS Box-model
+# CSS Size
 
 # 크기 단위
 CSS에서 사용하는 크기의 단위에는 %, em, px, cm, mm, inch 등이 있다.  
