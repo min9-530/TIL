@@ -12,7 +12,7 @@
 
 ## 종류
 1. BrowserRouter: HTML5를 지원하는 브라우저의 주소를 감지 한다.  
-2. HashRouter : 해시 주소 (https://github.com/min9-530/TIL/blob/main/React/Router.md)를 감지한다.
+2. HashRouter : 해시 주소 (https://github.com/min9-530/TIL/blob/main/React/Router.md) 를 감지한다.
 
 ## 설치
 npm  
