@@ -107,14 +107,11 @@ const Home = () => {
 export default Home;
 ```
 
-# URL Parameter & Querystring  
-페이지 주소를 정의할 때 가끔은 유동적인 값을 사용해야 하는데, 이때 URL 파라미터와 쿼리스트링을 사용한다.  
-  
-+ URL 파라미터 예시: /profile/min2u
-+ 쿼리스트링 예시: /articles?page=1&keyword=react
+# URL Parameter
++ URL 파라미터 예시: /profile/min2u  
 
-URL 파라미터는 주소의 경로에 유동적인 값을 넣는 형태고, 쿼리스트링은 주소의 뒷부분에 ? 문자열 이후에 key=value로 값을 정의하며 &로 구분하는 형태이다.  
-URL 파라미터는 주로 ID 또는 이름을 사용하여 특정 데이터를 조회할 때 사용하고, 쿼리스트링은 키워드 검색, 페이지네이션, 정렬 방식 등 데이터 조회에 필요한 옵션을 전달할 때 사용한다.  
+URL 파라미터는 주소의 경로에 유동적인 값을 넣는 형태이다.  
+또한, URL 파라미터는 주로 ID 또는 이름을 사용하여 특정 데이터를 조회할 때 사용한다.  
   
 # useParams
 useParams는 URL 파라미터를 조회할 때 사용하는 React Hook으로, 라우트 설정을 할 때 Route 컴포넌트의 path props를 통해 설정한다.
