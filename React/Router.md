@@ -11,8 +11,18 @@
 이중에서 가장 많이 사용되는 라우터 컴포넌트는 BrowserRouter와 HashRouter이다.
 
 ## 종류
-1. BrowserRouter: HTML5를 지원하는 브라우저의 주소를 감지 한다.  
-2. HashRouter : 해시 주소 (https://github.com/min9-530/TIL/blob/main/React/Router.md) 를 감지한다.
+1. BrowserRouter
+  + HTML5의 history API를 활용한 라우터이다.
+  + SSR(Server Side Rendering)에 적합하다.
+  + 새로고침하거나 url로 직접 접근할 경우 경로를 찾지 못해 에러가 발생한다.
+  + 이때문에 배포하기가 좀 더 복잡하다.
+2. HashRouter
+  + URL의 hash를 사용한 라우터이다.
+  + CSR(Client Side Rendering)에 적합하다.
+  + 라우터에 # 가 붙는다.
+  + 해시를 사용하면 서버에 요청하지 않기 때문에 url로 직접 접근해도 에러가 발생하지 않는다.
+  + 따라서 배포가 좀 더 간단하다.
+  + 하지만 # 를 검색 엔진이 읽지 못하기 때문에 최적화가 좋지 않다.
 
 ## 설치
 npm  
