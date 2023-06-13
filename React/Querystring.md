@@ -19,3 +19,27 @@ location 객체를 반환하며 사용자가 현재 보고있는 페이지의 �
 + key: location 객체의 고유값, 초기에는 default이며 페이지가 변경될 때마다 고유의 값이 생성
 
 ## About.js
+```js
+// 주소: http://localhost:3000/about?detail=true&mode=1
+
+import { useLocation } from "react-router-dom";
+
+const About = () => {
+  const location = useLocation();
+
+  return (
+    <div>
+      <h1>소개</h1>
+      <p>리액트 라우터를 사용해 보는 프로젝트입니다.</p>
+      <p>쿼리스트링: {location.search}</p>
+      {/*location.search의 값: ?detail=true&mode=1*/}
+    </div>
+  );
+};
+
+export default About;
+```
+
+# useSearchParams
+useSearchParams는 쿼리스트링을 더욱 쉽게 다룰 수 있게 해주는 React Hook 이다.  
+useSearchParams는 배열 타입의 값을 반환하며, 첫 번째 원소는 쿼리파라미터를 조회하거나 수정하는 메서드들이 담긴 객체를 반환한다. 
