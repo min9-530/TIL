@@ -75,8 +75,8 @@ const About = () => {
   };
   // mode 값 초기화
   const OnResetMode = () => {
-    const returnMode = mode === null ? 0 : 0;
-    setSearchParams({ mode: returnMode, detail });
+   const resetMode = mode === null ? 0 : 0;
+    setSearchParams({ mode: resetMode, detail });
   };
 
   return (
