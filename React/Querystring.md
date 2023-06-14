@@ -51,6 +51,7 @@ get 메서드를 통해 특정 쿼리파라미터를 조회할 수 있고, set �
 // 주소: http://localhost:3000/about?detail=true&mode=1
 
 import { useSearchParams } from "react-router-dom";
+import "./About.scss";
 
 const About = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -67,6 +68,16 @@ const About = () => {
     const nextMode = mode === null ? 1 : parseInt(mode) + 1;
     setSearchParams({ mode: nextMode, detail });
   };
+  // mode 값 감소
+  const onDecreaseMode = () => {
+    const prevMode = mode === null ? 1 : parseInt(mode) - 1;
+    setSearchParams({ mode: prevMode, detail });
+  };
+  // mode 값 초기화
+  const OnResetMode = () => {
+    const returnMode = mode === null ? 0 : 0;
+    setSearchParams({ mode: returnMode, detail });
+  };
 
   return (
     <div>
@@ -76,6 +87,8 @@ const About = () => {
       <p>mode: {mode}</p>
       <button onClick={onToggleDetail}>Toggle detail</button>
       <button onClick={onIncreaseMode}>IncreaseMode</button>
+      <button onClick={onDecreaseMode}>DecreaseMode</button>
+      <button onClick={OnResetMode}>ResetMode</button>
     </div>
   );
 };
