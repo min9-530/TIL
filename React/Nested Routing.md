@@ -88,3 +88,57 @@ const Home = () => {
 
 export default Home;
 ```
+
+# Outlet
+이 컴포넌트는 Route의 children으로 들어가는 JSX 엘리멘트를 보여주는 역할을 한다.
+
+## App.js
+```js
+import { Route, Routes } from "react-router-dom";
+import About from "./pages/About";
+import Home from "./pages/Home";
+import Profile from "./pages/Profile";
+import Articles from "./pages/Articles";
+import Article from "./pages/Article";
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/profiles/:username" element={<Profile />} />
+      <Route path="/articles" element={<Articles />}>
+        <Route path=":id" element={<Article />} />
+      </Route>
+    </Routes>
+  );
+}
+
+export default App;
+```
+
+## Articles.js
+```js
+import { Link, Outlet } from "react-router-dom";
+
+const Articles = () => {
+  return (
+    <div>
+      <Outlet />
+      <ul>
+        <li>
+          <Link to="/articles/1">게시글 1</Link>
+        </li>
+        <li>
+          <Link to="/articles/2">게시글 2</Link>
+        </li>
+        <li>
+          <Link to="/articles/3">게시글 3</Link>
+        </li>
+      </ul>
+    </div>
+  );
+};
+
+export default Articles;
+```
