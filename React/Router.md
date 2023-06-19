@@ -183,3 +183,40 @@ function App() {
 export default App;
 ```
 
+
+# useNavigate
+Link 컴포넌트를 사용하지 않고 다른 페이지로 이동해야 하는 상황에 사용하는 Hook이다.
+
+## Layout.js
+```js
+import { Outlet, useNavigate } from "react-router-dom";
+
+const Layout = () => {
+  const navigate = useNavigate();
+
+  const goBack = () => {
+    // parameter가 숫자타입이라면 그 숫자만큼 페이지가 뒤로가거나 앞으로 이동한다.
+    navigate(-1);
+  };
+
+  const goArticles = () => {
+    // 해당 주소로 이동할 때 현재 페이지를 기록에 남기지 않는다.
+    navigate("/articles", { replace: true });
+  };
+
+  return (
+    <div>
+      <header style={{ background: "lightgray", padding: 16, fontSize: 24 }}>
+        <button onClick={goBack}>뒤로가기</button>
+        <button onClick={goArticles}>게시글 목록</button>
+      </header>
+      <main>
+        <Outlet />
+      </main>
+    </div>
+  );
+};
+
+export default Layout;
+
+```
