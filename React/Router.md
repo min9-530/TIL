@@ -228,7 +228,7 @@ export default Layout;
 + 이 컴포넌트의 style과 className은 { isActive: boolean }을 파라미터로 전달받는 함수 타입의 값을 전달한다.
 ```jsx
 <NavLink
-  
+  style={({isActive}) => isActive ? activeStyle : undefined}
 />
 
 <NavLink
