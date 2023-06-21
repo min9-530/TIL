@@ -40,3 +40,9 @@
 + 키워드: red, blue, gray 등등
 + 16진수 : #ffffff, #000000
 + rgb : rgb(255, 255, 255), rgba(255, 255, 255, 0)
+
+# Border-Radius
+``border-radius`` 속성은 테두리를 둥글게 만든다.
+
+## 속성값
++ 단위값: px, %
