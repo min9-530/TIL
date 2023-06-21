@@ -30,14 +30,14 @@
 ``border-width`` 속성은 테두리의 두께를 설정한다.
 
 ## 속성값
-+ 단위값: px, em, cm 등
-+ 예약어: thin, medium, thick
++ 단위값 : px, em, cm 등
++ 예약어 : thin, medium, thick
 
 # Border-Color
 ``border-color`` 속성은 테두리의 색상을 설정한다.
 
 ## 속성값
-+ 키워드: red, blue, gray 등등
++ 키워드 : red, blue, gray 등등
 + 16진수 : #ffffff, #000000
 + rgb : rgb(255, 255, 255), rgba(255, 255, 255, 0)
 
@@ -45,4 +45,4 @@
 ``border-radius`` 속성은 테두리를 둥글게 만든다.
 
 ## 속성값
-+ 단위값: px, %
++ 단위값 : px, %
