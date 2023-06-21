@@ -1,5 +1,7 @@
 # Border
-``border`` 속성은 내용(content)과 패딩(padding) 영역을 둘러싸는 테두리의 스타일을 설정한다.
+``border`` 속성은 내용(content)과 패딩(padding) 영역을 둘러싸는 테두리의 스타일을 설정한다.  
+![image](https://github.com/min9-530/TIL/assets/104071568/b0e295ea-9c34-4697-b9f3-7c7bcc0720ce)
+
 
 # Border-Style
 ``border-style`` 속성을 이용하면 테두리를 다양한 모양으로 설정할 수 있다.
