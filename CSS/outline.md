@@ -27,3 +27,20 @@
   + 아웃라인을 없앤다.
 + hidden
   + 아웃라인이 존재하기는 하지만 표현되지는 않는다.
+
+
+# Outline-Width
+``outline-width`` 속성은 아웃라인의 두께를 설정한다.
+
+## 속성값
++ 단위 : px, em, cm 등등
++ 예약어 : thin, medium, thick
+
+
+# Outline-Color
+``outline-color`` 속성은 아웃라인의 색상을 설정한다.
+
+## 속성값
++ 키워드 : red, blue, gray 등등
++ 16진수 : #ffffff, #000000
++ rgb : rgb(255, 255, 255), rgba(255, 255, 255, 0)
