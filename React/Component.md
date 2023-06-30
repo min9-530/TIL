@@ -46,3 +46,4 @@ function FunctionExample() {
 3. context
 
 - 부모 컴포넌트에서 생성하여 모든 자식 컴포넌트에게 전달하는 데이터이다.
+
