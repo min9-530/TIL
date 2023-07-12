@@ -7,7 +7,7 @@ let a: string = 'hi'; // 문자열
 let b: number = 1; // 숫자형
 let c: boolean = false; // 논리형
 let d: any = true; // 어떤 타입인지 모를 때
-let e: string | number = 0; 문자열이나 숫자가 올 때
+let e: string | number = 0; // 문자열이나 숫자가 올 때
 ```
 
 ## 타입 에러
