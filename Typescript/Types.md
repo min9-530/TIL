@@ -129,20 +129,61 @@ user = ['woonrin', 18];  // ["woonrin", 18]
 user.push(2413);  // ["woonrin", 18, 2413]
 ```
 ## 열거형(Enum)
+숫자 혹은 문자열 값 집합에 이름을 부여할 수 있는 타입으로, 값의 종류가 일정한 범위로 정해져 있는 경우 유용하다. 기본적으로 0부터 시작하여, 값이 1씩 증가한다.
 ```js
-
+enum obj {
+    a,
+    b,
+    c,
+    d,
+    e
+}
+// 0: "a"
+// 1: "b"
+// 2: "c"
+// 3: "d"
+// 4: "e"
+// a: 0
+// b: 1
+// c: 2
+// d: 3
+// e: 4
 ```
-
-## 모든 타입(Any)
+수동으로 값을 변경할 수 있으며, 변경한 부분부터 다시 1씩 증가한다.
 ```js
-
+enum obj {
+    a,
+    b = 10,
+    c,  // 11
+    d,  // 12
+    e   // 13
+}
+```
+## 모든 타입(Any)
+Any는 모든 타입을 의미하며, 기존의 자바스크립트 변수와 마찬가지로 어떠한 타입의 값도 할당할 수 있다. 
+```js
+let any:any = 'string';
+any = 0;
+console.log(any);  // 0
+any = true;
+console.log(any);  / true
 ```
 
 ## 빈 타입(Void)
+빈 타입인 Void는 리턴값이 없는 함수에서 사용된다. 리턴값의 타입을 명시하는 곳에 작성하며, 리턴값이 없는 함수는 ``undefined``를 반환한다.
 ```js
-
+function hello(): void {
+    console.log("hello");
+}
+console.log(hello());  // undefined
 ```
 
 ## 절대 발생할 수 없는 타입(Never)
+Never 타입은 절대 발생할 수 없는 타입을 나타낸다.
 ```js
+function errorMsg(): never {
+    throw new Error("오류 발생!");
+}
+console.log(errorMsg()); // Uncaught Error: 오류 발생!
 ```
+``errorMsg`` 함수는 오류를 발생시키기 때문에 ``null``, ``undefined``를 포함한 어떤 값도 반환하지 않는다. 이럴 경우 never 타입을 사용하면 된다.
