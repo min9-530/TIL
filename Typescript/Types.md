@@ -166,7 +166,7 @@ let any:any = 'string';
 any = 0;
 console.log(any);  // 0
 any = true;
-console.log(any);  / true
+console.log(any);  // true
 ```
 
 ## 빈 타입(Void)
