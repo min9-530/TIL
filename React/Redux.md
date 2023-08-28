@@ -1,4 +1,6 @@
-![image](https://github.com/min9-530/TIL/assets/104071568/379a7a9d-7c65-44ed-a293-5c19cdd13f21)# Redux
+# Redux
+![image](https://github.com/min9-530/TIL/assets/104071568/da4f2f56-6ac6-472f-9c46-9d8003e70484)
+
 리덕스는 가장 많이 사용되는 리액트 상태 관리 라이브러리이다.  
 리덕스를 사용하면 컴포넌트의 상태 업데이트 관련 로직을 **다른 파일로 분리시켜서 더** 효율적으로 관리할 수 있다.  
 
@@ -10,8 +12,6 @@
 추가로 아주 편리한 개발자 도구인 **미들웨어** 라는 기능을 제공하여 비동기 작업을 훨씬 효율적으로 관리할 수 있게 해주기도 한다.
 
 ## 액션 
-![image](https://github.com/min9-530/TIL/assets/104071568/4d5d4b87-89c9-4ff1-a5c1-a64ea5f96643)  
-
 상태에 어떠한 변화가 생기면 액션(action)이란 것이 발생한다. 이는 하나의 객체로 표현되는데, 이 객체의 형식은 다음과 같다.  
 ```js
 {
@@ -37,8 +37,6 @@ ex)
 ```
 
 ## 액션 생성 함수
-![image](https://github.com/min9-530/TIL/assets/104071568/a747d684-65ec-4bdc-a5a8-97f6ff7bf7da)  
-
 액션 생성 함수(action creator)는 액션 객체를 만들어 주는 함수이다.
 ```js
 function addTodo(data) {
@@ -58,9 +56,6 @@ const changeInput= text -> ({
 만드는 과정에서 실수로 정보를 놓치는 것을 방지하기 위해 이를 함수로 만들어서 관리한다.
 
 ## 리듀서
-
-![image](https://github.com/min9-530/TIL/assets/104071568/9c1880cb-e48a-4afc-8b76-c4a879e17c43)  
-
 리듀서(Reduce)는 변화를 일으키는 함수이다. 액션을 만들어서 발생시키면 **리듀서가 현재 상태와 전달받은 액션 객체를 파라미터로 받아 온다.**  
 그리고 두 값을 참고하여 **새로운 상태를 만들어서 반환**해 준다.
 ```js
@@ -80,16 +75,21 @@ function reducer(state = initialState, action) {
 ```
 
 ## 스토어
-
-![image](https://github.com/min9-530/TIL/assets/104071568/5534723e-423a-4caa-b864-7335c2f7f9b3)  
-
 프로젝트에 리덕스를 적용하기 위해 스토어(store)를 만든다. **한 개의 프로젝트는 단 하나의 스토어만 가질 수 있다.** 스토어 안에는 현재 애플리케이션 상태와 리듀서가 들어가 있으며, 그 외에도 몇 가지 중요한 내장 함수를 지닌다. 또한 스토어는 state를 수시로 확인해 view한테 변경된 사항을 알려준다.
 
 ## 디스패치
-
-![image](https://github.com/min9-530/TIL/assets/104071568/a45db7d1-5932-4884-a10b-b7bf67a61ca1)  
-
 디스패치(dispatch)는 스토어의 내장 함수 중 하나로, **'액션을 발생시키는 것'** 이라 이해하면 된다. 
 이 함수는 dispatch(action)과 같은 형태로 액션 객체를 파라미터로 넣어서 호출한다. 디스패치가 액션을 발생시켜 스토어에게 상태 변화가 필요하다는 것을 알린다.  
 
 이 함수가 호출되면 스토어는 **리듀서 함수를 실행**시켜서 새로운 상태를 만들어 준다.
+
+## 구독
+구독(subscribe)도 스토어의 내장 함수중 하나이다. subscribe 함수 안에 리스너 함수를 파라미터로 넣어서 호출해 주면, 이 리스너 함수에서 **액션이 디스패치되어 상태가 업데이트될 때마다 호출된다.**
+```js
+const listener = () => {
+  console.log('상태가 업데이트됨');
+}
+const unscribe = store.subscribe(listener);
+
+unscribe();
+```
