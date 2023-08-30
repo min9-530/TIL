@@ -89,16 +89,7 @@ function reducer(state = initialState, action) {
 const listener = () => {
   console.log('상태가 업데이트됨');
 }
-const unscribe = store.subscribe(listener);
-
-unscribe();
-```
-
-# 리덕스의 세 가지 규칙
-## 1. 단일 스토어 (Single source of truth)
-  + 애플리케이션 내의 모든 상태는 하나의 스토어 안에 객체트리로 저장된다.
-## 2. 읽기 전용 상태 (State is read-only)
-  + 상태는 불변해야 하며, 오직 액션만이 상태교체를 요청할 수 있어 한다.
+const unscribe = store.subscribe(listener)야 한다.
 ## 3. 리듀서는 순수한 함수 (Changes are made with pure functions)
   + 리듀서 함수는 순수한 함수여야 한다.
     + 리듀서 함수는 이전 상태와 액션 객체를 파라미터로 받는다.
