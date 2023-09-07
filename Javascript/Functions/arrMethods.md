@@ -111,3 +111,51 @@ res = array.slice(1, 3);
 console.log(res);
 // [2, 3]
 ```
+
+## fill
+> 배열의 시작 인덱스부터 끝 인덱스의 이전까지 정적인 값 하나로 채운다.
+
+```js
+배열.fill(배열을 채울 값[, 시작 인덱스[, 끝 인덱스]]);
+```
+
+```js
+cosnt array1 = [1, 2, 3, 4];
+
+console.log(array1.fill(0, 2, 4)); // [1, 2, 0, 0]
+console.log(array1.fill(5, 1)); // [1, 5, 5, 5]
+console.log(array1.fill(6)); // [6, 6, 6, 6]
+```
+
+## filter
+> 주어진 조건을 만족하는 모든 요소를 모아 새로운 배열로 반환한다.
+
+```js
+const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+
+const result = words.filter((word) => word.length > 6);
+
+console.log(result); // ["exuberant", "destruction", "present"]
+```
+
+## find
+> 주어진 조건을 만족하는 **첫 번째 요소의 값**을 반환한다. (없다면, undefined를 반환)
+
+```js
+const array1 = [5, 12, 8, 130, 44];
+
+const found = array1.find((element) => element > 10);
+
+console.log(found); // 12
+```
+
+## findIndex
+> 주어진 조건을 만족하는 배열의 첫 번째 요소에 대한 인덱스를 반환한다. (없다면, -1을 반환)
+
+```js
+const array1 = [5, 12, 8, 130, 44];
+
+const isLargeNumber = (element) => element > 13;
+
+console.log(array1.findIndex(isLargeNumber)); // 3
+```
