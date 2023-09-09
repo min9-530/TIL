@@ -6,7 +6,7 @@
 const arr = [5, 3, 2, 4, 6, 1];
 const rest;
 
-res = arr.sort();
+res = arr.sort((a, b) => a - b);
 console.log(res);
 // [1, 2, 3, 4, 5, 6]
 
