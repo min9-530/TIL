@@ -122,9 +122,12 @@ console.log(res);
 ```js
 cosnt array1 = [1, 2, 3, 4];
 
-console.log(array1.fill(0, 2, 4)); // [1, 2, 0, 0]
-console.log(array1.fill(5, 1)); // [1, 5, 5, 5]
-console.log(array1.fill(6)); // [6, 6, 6, 6]
+console.log(array1.fill(0, 2, 4));
+// [1, 2, 0, 0]
+console.log(array1.fill(5, 1));
+// [1, 5, 5, 5]
+console.log(array1.fill(6));
+// [6, 6, 6, 6]
 ```
 
 ## filter
@@ -135,7 +138,8 @@ const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present']
 
 const result = words.filter((word) => word.length > 6);
 
-console.log(result); // ["exuberant", "destruction", "present"]
+console.log(result);
+// ["exuberant", "destruction", "present"]
 ```
 
 ## find
@@ -158,4 +162,95 @@ const array1 = [5, 12, 8, 130, 44];
 const isLargeNumber = (element) => element > 13;
 
 console.log(array1.findIndex(isLargeNumber)); // 3
+```
+
+## findLast
+> 배열을 **역순으로 순회하며** 주어진 조건을 만족하는 **첫 번째 요소의 값**을 반환한다. (없다면, undefined를 반환)
+
+```js
+const array1 = [5, 12, 50, 130, 44];
+
+const found = array1.findLast((element) => element > 45);
+
+console.log(found); // 130
+```
+
+## findLastIndex
+> 배열을 **역순으로 순회하며** 주어진 조건을 만족하는 **첫 번째 요소의 인덱스**를 반환한다. (없다면, -1을 반환)
+
+```js
+const array1 = [5, 12, 50, 130, 44];
+
+const isLargeNumber = (element) => element > 45;
+
+console.log(array1.findLastIndex(isLargeNumber)); // 3
+```
+
+## flat
+> 모든 하위 배열 요소를 지정한 깊이까지 재귀적으로 이어붙인 새로운 배열을 생성한다.
+
+```js
+const newArr = arr.flat([depth]);
+// depth는 중첩 배열 구조를 평탄화할 때 사용할 깊이 값으로 기본값은 1이다.
+// 반환 값은 하위 배열을 이어붙인 새로운 배열이다.
+```
+
+```js
+const arr1 = [1, 2, [3, 4]];
+console.log(arr1.flat());
+// [1, 2, 3, 4]
+
+const arr2 = [1, 2, [3, 4, [5, 6]]];
+console.log(arr2.flat());
+// [1, 2, 3, 4, [5, 6]]
+
+const arr3 = [1, 2, [3, 4, [5, 6]]];
+console.log(arr3.flat(2));
+// [1, 2, 3, 4, 5, 6]
+
+const arr4 = [1, 2, [3, 4, [5, 6, [7, 8, [9, 10]]]]];
+console.log(arr4.flat(Infinity));
+// [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+// 배열의 구멍도 제거 가능
+const arr5 = [1, 2, , 4, 5];
+console.log(arr5.flat());
+// [1, 2, 3, 4]
+```
+
+## forEach
+> 주어진 함수를 배열 요소 각각에 대해 실행한다.
+
+```js
+const array1 = ['a', 'b', 'c'];
+
+array1.forEach((element) => console.log(element));
+// "a"
+// "b"
+// "c"
+
+// for문도 대체 가능
+const items  = ["item1", "item2", "item3"];
+const copy = [];
+
+// 이전
+for (let i = 0; i < items.length; i++) {
+  copy.push(items[i]);
+}
+
+// 이후
+items.forEach(function (item) {
+  copy.push(item);
+});
+```
+
+## from
+> 유사 배열 객체나 반복 가능한 객체를 얕게 복사해 새로운 배열 객체를 만든다.
+
+```js
+console.log(Array.from('foo'));
+// ["f", "o", "o"]
+
+console.log(Array.from([1, 2, 3], (x) => x + x));
+// [2, 4, 6]
 ```
