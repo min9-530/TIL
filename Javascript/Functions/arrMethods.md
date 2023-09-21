@@ -254,3 +254,38 @@ console.log(Array.from('foo'));
 console.log(Array.from([1, 2, 3], (x) => x + x));
 // [2, 4, 6]
 ```
+
+## map
+> 배열 내의 모든 요소 각각에 대하여 주어진 함수를 호출한 결과를 모아 새로운 배열을 반환한다.
+
+```js
+const array1 = [1, 4, 9, 16];
+
+const map1 = array1.map((x) => x * 2);
+
+console.log(map1);
+// [2, 8, 18, 32]
+```
+
+## reduce
+> 배열의 각 요소에 대해 주어진 리듀서 (reducer) 함수를 실행하고, 하나의 결과값을 반환한다.
+
+```js
+const array1 = [1, 2, 3, 4];
+
+const initialValue = 0;
+const sumWithInitial = array1.reduce((acc, cur) => acc + cur, 0);
+
+console.log(sumWithInitial);
+// 10
+```
+
+## toString
+> 지정된 배열 및 그 요소를 나타내는 문자열을 반환한다.
+
+```js
+const array1 = [1, 2, 'a', '1a'];
+
+console.log(array1.toString());
+// "1,2,a,1a"
+```
