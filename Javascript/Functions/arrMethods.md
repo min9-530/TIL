@@ -289,3 +289,15 @@ const array1 = [1, 2, 'a', '1a'];
 console.log(array1.toString());
 // "1,2,a,1a"
 ```
+
+## concat
+> 두 개 이상의 배열을 병합하는 데 사용되며, 기존 배열이 아닌 새 배열을 반환한다.
+
+```js
+const array1 = ['a', 'b', 'c'];
+const array2 = ['d', 'e', 'f'];
+const array3 = array1.concat(array2);
+
+console.log(array3);
+// ["a", "b", "c", "d", "e", "f"]
+```
