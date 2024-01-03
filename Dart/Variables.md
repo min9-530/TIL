@@ -54,3 +54,24 @@ dart는 여러 타입을 가질 수 있는 **dynamic** 타입을 지원한다.
 
 dynamic 타입은 대표적으로 타입을 알기 힘들 때 사용된다. 예를 들어 json을 작업할 때 같은 경우이다.  
 하지만 dynamic 타입은 다앙한 타입을 가질 수 있기 때문에 **정말 필요할 때만** 사용해야 한다.
+
+## final
+```dart
+void main() {
+  final name = 'minsu';
+  name = '2403'; // 수정 불가
+
+  final String name = 'minsu';
+  name = '2403'; // 수정 불가
+}
+```
+var 대신 final로 변수를 만들게 되면 이 변수는 수정할 수 없게 된다. (딱 한 번만 설정될 수 있다.) JS나 TS의 const와 똑같다.
+
+## late
+```dart
+void main() {
+  late final String name;
+  name = 'minsu';
+}
+```
+late는 초기 데이터 없이 변수를 선언할 수 있게 해준다. 즉, 선언과 초기화를 다른 시점에 할 수 있기 때문에 이를 지연 초기화라고 한다. 또한, late를 사용한 변수를 초기화 하기 전에 접근하려고 한다면 dart에서 late 변수는 값을 초기화 하기 전에는 접근하지 않아야 한다는 것을 알려준다. 이로 인해 [null safety](https://github.com/min9-530/TIL/blob/main/Dart/Null%20Safety.md)가 보장된다.
