@@ -65,7 +65,7 @@ void main() {
   name = '2403'; // 수정 불가
 }
 ```
-var 대신 final로 변수를 만들게 되면 이 변수는 수정할 수 없게 된다. (딱 한 번만 설정될 수 있다.) JS나 TS의 const와 똑같다.
+var 대신 final로 변수를 만들게 되면 이 변수는 수정할 수 없게 된다. (딱 한 번만 설정될 수 있다.) JS나 TS의 const와 비슷다.
 
 ## late
 ```dart
@@ -75,3 +75,14 @@ void main() {
 }
 ```
 late는 초기 데이터 없이 변수를 선언할 수 있게 해준다. 즉, 선언과 초기화를 다른 시점에 할 수 있기 때문에 이를 지연 초기화라고 한다. 또한, late를 사용한 변수를 초기화 하기 전에 접근하려고 한다면 dart에서 late 변수는 값을 초기화 하기 전에는 접근하지 않아야 한다는 것을 알려준다. 이로 인해 [null safety](https://github.com/min9-530/TIL/blob/main/Dart/Null%20Safety.md)가 보장된다.
+
+## const
+```dart
+void main() {
+  const name = "minsu"; // 컴파일 시점에 바뀌지 않는 값
+  final username = fetchAPI(); // 컴파일 시점에 바뀌는 값
+}
+```
+dart의 const는 JS나 TS와 다르다. 여기서 const는 compile-time constant(컴파일 시간에 초기화 값을 알 수 있는 상)를 만들어준다.  
+또한 const는 컴파일할 때 알고 있는 값을 사용해야 한다.  
+만약 어떤 값인지 모르고, 그 값이 API 로부터 오거나 사용자가 화면에서 입력해야 하는 값이라면 final이나 var를 사용해야 한다.
