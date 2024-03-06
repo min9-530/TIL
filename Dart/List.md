@@ -21,5 +21,20 @@ void main() {
   5,
   if(caseNumber > 5) caseNumber;,
 ];
+print (case1); // 1, 2, 3, 4, 5, 6
+}
+```
+
+## Collection for
+`collection for`는 코드 내에서 for문을 사용하여 기존의 리스트에 다른 리스트를 반복문으로 호출하여 새롭게 추가할 수 있다.  
+```dart
+void main() {
+  var friends = ["tom", "james", "sam"]
+  var family = [
+"john",
+"mike",
+for(var friend in friends) "*new* friend"
+];
+print (family); // [john, mike, *new* tom, *new* james, *new* sam]
 }
 ```
