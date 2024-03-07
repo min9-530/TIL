@@ -15,6 +15,19 @@ void main() {
 }
 ```
 
+## Positional Parameters
+Positional Parameters는 Parameter의 순서가 중요하다.  
+따라서 해당 함수를 사용할 때 요소들의 순서를 기억해야 한다.  
+
+```dart
+String sayHello(String name, int age, String country){
+  return "Hello $name, you are $age, and you are from $country";
+}
+
+void main() {
+  print(sayHello("minsu", 19, "Korea"));
+}
+```
 
 ## Named Parameters
 Named Parameters는 명시적으로 required로 표시되지 않는  선택 사항이다.  
