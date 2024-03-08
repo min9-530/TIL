@@ -56,3 +56,16 @@ void main() {
   print(sayHi()); // name, age, country의 값이 모두 포함되지 않으면 dart에서 컴파일하지 않음
 }
 ```
+
+## Optional Positional Parameters
+Optional Positional Parameters는 Positional Parameters과는 다르게 요소를 필수가 아닌 선택으로 바꾼 것이다.
+
+```dart
+String sayHello(String name, int age, [String? country = ""]) {
+  return "hello $name, you are $age from the $country";
+}
+
+void main() {
+  print(sayHello("minsu", 19)); // hello minsu, you are 19 from the 
+}
+```
