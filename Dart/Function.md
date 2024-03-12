@@ -59,13 +59,18 @@ void main() {
 
 ## Optional Positional Parameters
 Optional Positional Parameters는 Positional Parameters과는 다르게 요소를 필수가 아닌 선택으로 바꾼 것이다.
-
+여기서 []를 사용하냐 사용하지 않느냐의 차이는 null을 명시적으로 할당해야되냐 아니냐의 차이다.
 ```dart
 String sayHello(String name, int age, [String? country = ""]) {
   return "hello $name, you are $age from the $country";
 }
 
+String sayBye(String name, int age, String? country = "") {
+  return "bye $name, you are $age from the $country";
+}
+
 void main() {
-  print(sayHello("minsu", 19)); // hello minsu, you are 19 from the 
+  print(sayHello("minsu", 19)); // hello minsu, you are 19 from the
+  print(sayBye("minsu", 19, null)) // bye minsu, you are 19 from the 
 }
 ```
