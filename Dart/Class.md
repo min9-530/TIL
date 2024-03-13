@@ -73,3 +73,49 @@ void main() {
   me2.sayHello();
 }
 ```
+
+# Named Constructors
+Named Constructors를 사용하여 클래스에 대해 여러 생성자를 구현할 수 있다.
+```dart
+class AboutMe {
+  String name;
+  int age;
+  String country;
+
+  AboutMe({
+    required this.name,
+    required this.age,
+    required this.country,
+  });
+
+  AboutMe.createAmerican({    // named syntax
+    required String name,
+    required int age,
+  })  : this.name = name,
+        this.age = age,
+        this.country = 'USA';
+
+  AboutMe.createKorean(String name, int age)  // positional syntax
+      : this.age = age,
+        this.name = name,
+        this.country = 'Korea';
+
+  void sayHello() {
+    print('제 이름은 $name 이고, 나이는 $age살 입니다. 그리고 저는 $country 에서 왔습니다.');
+  }
+}
+
+void main() {
+  var me = AboutMe.createAmerican(
+    name: 'John',
+    age: 25,
+  );
+  me.sayHello(); // 제 이름은 John 이고, 나이는 25살 입니다. 그리고 저는 USA 에서 왔습니다.
+
+  var me2 = AboutMe.createKorean(
+    'Jane',
+    22,
+  );
+  me2.sayHello(); // 제 이름은 Jane 이고, 나이는 22살 입니다. 그리고 저는 Korea 에서 왔습니다.
+}
+```
