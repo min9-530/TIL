@@ -154,3 +154,55 @@ void main() {
     ..sayHello(); // 제 이름은 James 이고, 나이는 35살 입니다. 그리고 저는 Canada 에서 왔습니다.
 }
 ```
+
+## Enum
+enum은 우리가 클래스를 사용할 때 값을 추가할 때 실수하지 않도록 도와주는 타입이다.
+```dart
+enum Position {
+  Top,
+  Jungle,
+  Mid,
+  ADC,
+  Support,
+}
+
+enum Tier {
+  Iron,
+  Bronze,
+  Silver,
+  Gold,
+  Platinum,
+  Diamond,
+  Master,
+  Grandmaster,
+  Challenger,
+}
+
+class Player {
+  String name;
+  int age;
+  Tier tier;
+  Position position;
+
+  Player(
+      {required this.name,
+      required this.age,
+      required this.tier,
+      required this.position});
+}
+
+void info(Player player) {
+  print(
+      "Name : ${player.name}, Age : ${player.age}, Tier : ${player.tier.name}, Position : ${player.position.name}");
+}
+
+void main() {
+  Player player1 =
+      Player(name: 'Joon', age: 19, tier: Tier.Platinum, position: Position.ADC)
+        ..name = 'Faker'
+        ..age = 25
+        ..tier = Tier.Challenger
+        ..position = Position.Mid;
+  info(player1); // Name : Faker, Age : 25, Tier : Challenger, Position : Mid
+}
+```
