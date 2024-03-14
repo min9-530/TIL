@@ -206,3 +206,66 @@ void main() {
   info(player1); // Name : Faker, Age : 25, Tier : Challenger, Position : Mid
 }
 ```
+
+## Abstract Classes
+추상화 클래스란 다른 클래스들이 직접 구현 해야하는 메소드들을 모아놓은 일종의 `청사진`이라 보면 된다.  
+추상 클래스에선 기능을 구현하지 않으며, 객체를 생성할 수 없다.  
+따라서 메소드의 이름과 반환 타입만 정해서 정의할 수 있다.  
+```dart
+abstract class UserInfo {
+  void deal();
+} // abstract class
+
+enum Position {
+  Top,
+  Jungle,
+  Mid,
+  ADC,
+  Support,
+}
+
+enum Tier {
+  Iron,
+  Bronze,
+  Silver,
+  Gold,
+  Platinum,
+  Diamond,
+  Master,
+  Grandmaster,
+  Challenger,
+}
+
+class Player extends UserInfo {
+  String name;
+  int age;
+  Tier tier;
+  Position position;
+
+  Player(
+      {required this.name,
+      required this.age,
+      required this.tier,
+      required this.position});
+
+  void deal() {
+    print('$name is dealing damage to the enemy!');
+  }
+}
+
+void info(Player player) {
+  print(
+      "Name : ${player.name}, Age : ${player.age}, Tier : ${player.tier.name}, Position : ${player.position.name}");
+}
+
+void main() {
+  Player player1 =
+      Player(name: 'Joon', age: 19, tier: Tier.Platinum, position: Position.ADC)
+        ..name = 'Faker'
+        ..age = 25
+        ..tier = Tier.Challenger
+        ..position = Position.Mid;
+  info(player1);
+  player1.deal();
+}
+```
