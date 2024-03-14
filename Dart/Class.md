@@ -119,3 +119,38 @@ void main() {
   me2.sayHello(); // 제 이름은 Jane 이고, 나이는 22살 입니다. 그리고 저는 Korea 에서 왔습니다.
 }
 ```
+
+## Cascade Notation
+dart에선 클래스를 사용하다 보면 반복되는 부분이 생기기 마련인데, 이를 ..을 사용함으로써 해결할 수 있다.  
+```dart
+class AboutMe {
+  String name;
+  int age;
+  String country;
+
+  AboutMe({
+    required this.name,
+    required this.age,
+    required this.country,
+  });
+
+  void sayHello() {
+    print('제 이름은 $name 이고, 나이는 $age살 입니다. 그리고 저는 $country 에서 왔습니다.');
+  }
+}
+
+void main() {
+  var me = AboutMe(name: 'John', age: 25, country: 'USA')
+    ..name = 'Amy'
+    ..age = 30
+    ..country = 'Korea'
+    ..sayHello(); // 제 이름은 Amy 이고, 나이는 30살 입니다. 그리고 저는 Korea 에서 왔습니다.
+
+  var me2 = AboutMe(name: 'John', age: 25, country: 'USA');
+  var reMe = me2    // 이런 방법으로 class 생성 직후가 아니더라도 사용할 수 있다.
+    ..name = 'James'
+    ..age = 35
+    ..country = 'Canada'
+    ..sayHello(); // 제 이름은 James 이고, 나이는 35살 입니다. 그리고 저는 Canada 에서 왔습니다.
+}
+```
